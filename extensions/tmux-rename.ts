@@ -16,9 +16,13 @@ export default function (pi: ExtensionAPI) {
   let isFirstTurn = true;
 
   pi.on("session_start", async (event, _ctx) => {
-    // Only treat as "first turn" for genuinely new conversations
+    // Treat as first turn only for genuinely new conversations.
+    // On reload, a fresh extension closure starts with isFirstTurn = true, so
+    // we explicitly reset to false to avoid a spurious rename mid-conversation.
     if (event.reason === "startup" || event.reason === "new") {
       isFirstTurn = true;
+    } else {
+      isFirstTurn = false;
     }
   });
 
