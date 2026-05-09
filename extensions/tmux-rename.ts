@@ -35,7 +35,6 @@ export default function (pi: ExtensionAPI) {
     label: "Rename Tmux Window",
     description:
       "Rename the current tmux window to a short label reflecting the conversation topic.",
-    promptSnippet: "Rename the current tmux window to match the conversation topic",
     promptGuidelines: [
       "Use tmux_rename_window if the conversation topic has shifted significantly from the current window name.",
     ],
