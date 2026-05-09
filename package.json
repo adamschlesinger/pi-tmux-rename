@@ -1,0 +1,15 @@
+{
+  "name": "pi-tmux-rename",
+  "version": "1.0.0",
+  "description": "Pi extension that automatically renames tmux windows to reflect the current conversation topic",
+  "keywords": ["pi-package", "tmux", "pi-extension"],
+  "author": "adamschlesinger",
+  "license": "MIT",
+  "pi": {
+    "extensions": ["./extensions"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  }
+}
