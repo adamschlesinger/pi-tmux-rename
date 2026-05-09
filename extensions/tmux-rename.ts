@@ -53,7 +53,7 @@ export default function (pi: ExtensionAPI) {
 
       try {
         const label = params.label.replace(/"/g, '\\"');
-        execSync(`tmux rename-window "${label}"`, { stdio: "pipe" });
+        execSync(`tmux set-window-option automatic-rename off && tmux rename-window "${label}"`, { stdio: "pipe" });
         return {
           content: [{ type: "text", text: `Renamed tmux window to: ${params.label}` }],
           details: { label: params.label },
